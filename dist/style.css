@@ -1,0 +1,65 @@
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style.scss ***!
+  \*********************************************************************************************************/
+@media (min-width: 550px) {
+  .input-skrew {
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 300px;
+    padding: 12px 12px 12px 20px;
+    margin: 0 0 0 25px; }
+    .input-skrew input {
+      transform: skewX(45deg);
+      width: 100%;
+      border: none;
+      background-color: transparent;
+      color: #323232; }
+      .input-skrew input:focus {
+        border: none; }
+  .input-skrew,
+  input {
+    transform: skewX(-45deg); }
+  .button {
+    position: relative;
+    background: transparent;
+    border: none; }
+    .button::before {
+      transform: skewX(-45deg);
+      background: red;
+      border: 2px solid white;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1; } }
+
+@media (max-width: 550px) {
+  input {
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 150px;
+    padding: 15px; }
+  .button {
+    background: red;
+    border: 2px solid white; } }
+
+* {
+  font-size: 15px; }
+
+html {
+  background-color: #5a5a5a; }
+
+.container {
+  display: flex;
+  align-items: start; }
+
+input:focus {
+  outline: none;
+  box-shadow: none; }
+
+.button {
+  color: white;
+  padding: 15px 40px 15px 40px; }
+

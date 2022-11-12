@@ -1,0 +1,93 @@
+$inputBackground: rgba(255, 255, 255, 0.7);
+$border: 2px solid white;
+
+@mixin transformSkew($deg) {
+  transform: skewX($deg);
+}
+
+@mixin buttonStyling() {
+  background: red;
+  border: $border;
+}
+
+@mixin inputStyling() {
+  border: $border;
+  background-color: $inputBackground;
+}
+
+@media (min-width: 550px) {
+  .input-skrew {
+    @include inputStyling();
+    width: 300px;
+    padding: 12px 12px 12px 20px;
+    margin: 0 0 0 25px;
+
+    input {
+      @include transformSkew(45deg);
+      width: 100%;
+      border: none;
+      background-color: transparent;
+      color: rgb(50, 50, 50);
+      &:focus {
+        border: none;
+      }
+    }
+  }
+
+  .input-skrew,
+  input {
+    @include transformSkew(-45deg);
+  }
+
+  .button {
+    position: relative;
+    background: transparent;
+    border: none;
+    &::before {
+      @include transformSkew(-45deg);
+      @include buttonStyling();
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  input {
+    @include inputStyling();
+    width: 150px;
+    padding: 15px;
+  }
+
+  .button {
+    @include buttonStyling();
+  }
+}
+
+* {
+  font-size: 15px;
+}
+
+html {
+  background-color: rgb(90, 90, 90);
+}
+
+.container {
+  display: flex;
+  align-items: start;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.button {
+  color: white;
+  padding: 15px 40px 15px 40px;
+}
